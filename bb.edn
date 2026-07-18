@@ -1,0 +1,17 @@
+{:paths ["src" "test"]
+ :deps {cheshire/cheshire {:mvn/version "5.13.0"}}
+ :tasks
+ {test {:doc "Run the standalone Manabi CLJC suite"
+        :requires ([clojure.test]
+                   [manabi.cells.cert-prep.test-cert-prep]
+                   [manabi.methods.test-agent]
+                   [manabi.methods.test-charter-gates]
+                   [manabi.murakumo-test])
+        :task (let [r (clojure.test/run-tests
+                       'manabi.cells.cert-prep.test-cert-prep
+                       'manabi.methods.test-agent
+                       'manabi.methods.test-charter-gates
+                       'manabi.murakumo-test)]
+                (when (pos? (+ (:fail r) (:error r)))
+                  (throw (ex-info "manabi tests failed" r)))
+                r)}}}

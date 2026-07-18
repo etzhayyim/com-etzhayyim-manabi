@@ -1,1 +1,36 @@
-[{:actor/glyph "学", :actor/cells "[#:cell{:id \"literacy\", :kind :langgraph, :runtime :wasm} #:cell{:id \"numeracy\", :kind :langgraph, :runtime :wasm} #:cell{:id \"civics_charter\", :kind :langgraph, :runtime :wasm} #:cell{:id \"vocational\", :kind :langgraph, :runtime :wasm} #:cell{:id \"lifelong_inquiry\", :kind :langgraph, :runtime :wasm} #:cell{:id \"learner-session\", :kind :datalog, :runtime :kotoba}]", :actor/gates "[#:gate{:id \"G1\", :name \"open-source-curriculum\", :rule \"All curriculum content Apache 2.0 + Charter Rider on IPFS; no proprietary closed-source curriculum\"} #:gate{:id \"G2\", :name \"no-advertising\", :rule \"No sponsored content, commercial-product placement, or co-branded content in any module\"} #:gate{:id \"G3\", :name \"no-addiction-ux\", :rule \"Forbidden: streaks, daily-login rewards, variable-reward schedules, FOMO, leaderboards, badges-as-status. Permitted: progress meters, self-pacing, bookmarks, learner-initiated resumption\"} #:gate{:id \"G4\", :name \"charter-alignment-review\", :rule \"Every curriculum module requires Council Lv6+ ≥3 attestation: multi-gen priority + anti-individualism + Wellbecoming + non-eschatology + Charter Rider §2 scan\"} #:gate{:id \"G5\", :name \"multilingual\", :rule \"Minimum EN + JA; expand at ≥10-adherent-per-language threshold; Google Translate prohibited\"} #:gate{:id \"G6\", :name \"minor-privacy-aggregate-only\", :rule \"Under-18 learner: 30-day rotating pseudonym DID + aggregate-only attestations (sessionDuration, moduleId, completionFraction); forbidden: per-learner performance, error logs, time-on-task\"} #:gate{:id \"G7\", :name \"anti-credentialism\", :rule \"No degrees, transcripts, GPA-equivalent; only skillAttestation (replayable subject-specific demonstration). Liberation Ladder L5+ gates on skillAttestation, never credential\"} #:gate{:id \"G8\", :name \"no-proprietary-curriculum\", :rule \"CC-BY-SA or Apache 2.0 + Rider only; no Copyrighted 3rd-party textbooks without full community licensing\"} #:gate{:id \"G9\", :name \"tithe-non-fiat\", :rule \"決済は USDC Base L2 + ERC-4337 + warifu のみ; TitheRouter 10% auto-split; Stripe/fiat 非前提\"} #:gate{:id \"G10\", :name \"no-examination-coercion\", :rule \"Self-paced skill demonstration; no proctoring; no ID-gating; no high-stakes testing\"} #:gate{:id \"G11\", :name \"lifelong-access\", :rule \"No age-out, no age-floor except minor privacy (G6). Active Adherent SBT eligible for life.\"} #:gate{:id \"G12\", :name \"no-political-indoctrination\", :rule \"Comparative governance only; no electoral mobilization; no political-party content\"} #:gate{:id \"G13\", :name \"inquiry-pedagogy\", :rule \"≥30% learner-led per module; discovery over authority\"} #:gate{:id \"G14\", :name \"family-transmission-primary\", :rule \"manabi ≠ replacement for family/cultural/religious-of-origin learning. Comparative-religion mandated (including etzhayyim's own charter)\"}]", :actor/domain "manabi.etzhayyim.com", :actor/adr "2605261045", :actor/tier :tier-b, :actor/purpose "Open-curriculum education (literacy + numeracy + civics/charter + vocational + lifelong inquiry). Anti-credentialism (no degrees/transcripts, only skillAttestation). Anti-addiction UX (no streaks/rewards/leaderboards). Minor privacy (aggregate-only attestations, 30-day rotating pseudonym DID). Comparative-religion mandatory. Content-distribution heavy, compute-light. Murakumo-only, kotoba-EAVT-native.", :actor/legacy "{:manifest \"manifest.jsonld\", :cells-python [\"cells/literacy\" \"cells/numeracy\" \"cells/civics_charter\" \"cells/vocational\" \"cells/lifelong_inquiry\" \"cells/cert_prep\"], :note \"Python cell deprecation synchronized with kotodama atomic rename wave (ADR-2605214000 §3) after legal registration.\"}", :db/id -1, :actor/lex "[#:lex{:id \"curriculumAttestation\"} #:lex{:id \"learningSessionAttestation\"} #:lex{:id \"charterUnderstandingAttestation\"} #:lex{:id \"skillAttestation\"}]", :actor/status :r0, :actor/related ["2605261000" "2605181200" "2605192200" "2605192100"], :actor/charter-rider "#:rider{:version \"2.0\", :applied true}", :actor/id "manabi"}]
+[{:db/id -1
+  :actor/id "manabi"
+  :actor/glyph "学"
+  :actor/domain "manabi.etzhayyim.com"
+  :actor/tier :tier-b
+  :actor/status :r0
+  :actor/adr "2605261045"
+  :actor/related ["2605261000" "2605181200" "2605192200" "2605192100"]
+  :actor/purpose "Open-curriculum, anti-credentialist and privacy-preserving lifelong education."
+  :actor/charter-rider {:version "2.0" :applied true}
+  :actor/cells [{:cell/id "literacy" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "numeracy" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "civics_charter" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "vocational" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "lifelong_inquiry" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "cert_prep" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "social_post" :cell/kind :state-machine :cell/runtime :cljc}
+                {:cell/id "learner-session" :cell/kind :datalog :cell/runtime :kotoba}]
+  :actor/lex [{:lex/id "curriculumAttestation"}
+              {:lex/id "learningSessionAttestation"}
+              {:lex/id "charterUnderstandingAttestation"}
+              {:lex/id "skillAttestation"}]
+  :actor/gates [{:gate/id "G1" :gate/name "open-source-curriculum"}
+                {:gate/id "G2" :gate/name "no-advertising"}
+                {:gate/id "G3" :gate/name "no-addiction-ux"}
+                {:gate/id "G4" :gate/name "charter-alignment-review"}
+                {:gate/id "G5" :gate/name "multilingual"}
+                {:gate/id "G6" :gate/name "minor-privacy-aggregate-only"}
+                {:gate/id "G7" :gate/name "anti-credentialism"}
+                {:gate/id "G8" :gate/name "no-proprietary-curriculum"}
+                {:gate/id "G9" :gate/name "tithe-non-fiat"}
+                {:gate/id "G10" :gate/name "no-examination-coercion"}
+                {:gate/id "G11" :gate/name "lifelong-access"}
+                {:gate/id "G12" :gate/name "no-political-indoctrination"}
+                {:gate/id "G13" :gate/name "inquiry-pedagogy"}
+                {:gate/id "G14" :gate/name "family-transmission-primary"}]}]

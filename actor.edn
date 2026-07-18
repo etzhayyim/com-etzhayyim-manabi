@@ -1,0 +1,8 @@
+{:did "did:web:etzhayyim.github.io:com-etzhayyim-manabi"
+ :handle "manabi.etzhayyim.com"
+ :ipns-key "manabi-actor"
+ :graph-type "com.etzhayyim.manabi.graph"
+ :published "2026-07-18"
+ :bundle [["data" "data"]
+          ["wire/identity/did.json" "did.json"]
+          ["README.md" "README.md"]]}
