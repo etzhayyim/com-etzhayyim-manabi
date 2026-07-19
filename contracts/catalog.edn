@@ -5,7 +5,7 @@
  [{:name :charter-understanding-attestation :canonical/path "contracts/lexicons/charterUnderstandingAttestation.edn" :wire/path "wire/contracts/lexicons/charterUnderstandingAttestation.json"}
   {:name :curriculum-attestation :canonical/path "contracts/lexicons/curriculumAttestation.edn" :wire/path "wire/contracts/lexicons/curriculumAttestation.json"}
   {:name :learning-session-attestation :canonical/path "contracts/lexicons/learningSessionAttestation.edn" :wire/path "wire/contracts/lexicons/learningSessionAttestation.json"}
-  {:name :skill-attestation :canonical/path "contracts/lexicons/skillAttestation.edn" :wire/path nil}]
+  {:name :skill-attestation :canonical/path "contracts/lexicons/skillAttestation.edn" :wire/path "wire/contracts/lexicons/skillAttestation.json"}]
  :wire-only
  [{:name :cert-prep-session :wire/path "wire/contracts/lexicons/certPrepSession.json"}
   {:name :domain-mastery-attestation :wire/path "wire/contracts/lexicons/domainMasteryAttestation.json"}
